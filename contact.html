@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Neon Glow</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle, #141e30, #243b55); /* Dark theme gradient */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: white;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .contact-container {
+      background: #0f172a; /* Dark container */
+      border-radius: 12px;
+      padding: 40px;
+      width: 400px;
+      position: relative;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s;
+    }
+
+    .contact-container::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 12px;
+      z-index: -1;
+      background: linear-gradient(90deg, #00f3ff, #00ff85, #ff007f);
+      background-size: 400% 400%;
+      animation: neon-glow 6s infinite;
+    }
+
+    @keyframes neon-glow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 10px 0 5px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    input[type="submit"] {
+      background: linear-gradient(90deg, #00f3ff, #00ff85);
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background: linear-gradient(90deg, #ff007f, #00f3ff);
+    }
+
+    /* Light Theme */
+    .light-theme {
+      background: radial-gradient(circle, #ffffff, #e8f5e9); /* Light background */
+      color: #333;
+    }
+
+    .light-theme .contact-container {
+      background: #f1f8e9; /* Light container background */
+    }
+
+    .light-theme input[type="submit"] {
+      background: linear-gradient(90deg, #66bb6a, #a5d6a7); /* Light green gradient */
+    }
+
+    .light-theme input[type="submit"]:hover {
+      background: linear-gradient(90deg, #66bb6a, #81c784);
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-switcher">
+    <select id="theme-select" onchange="toggleTheme()">
+      <option value="dark">Dark Theme</option>
+      <option value="light">Light Theme</option>
+    </select>
+  </div>
+  
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <form action="#" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+      <input type="submit" value="Send Message">
+    </form>
+  </div>
+
+  <script>
+    // Function to toggle between light and dark themes
+    function toggleTheme() {
+      const theme = document.getElementById('theme-select').value;
+      if (theme === 'light') {
+        document.body.classList.add('light-theme');
+        document.body.classList.remove('dark-theme');
+      } else {
+        document.body.classList.remove('light-theme');
+        document.body.classList.add('dark-theme');
+      }
+    }
+  </script>
+</body>
+</html>

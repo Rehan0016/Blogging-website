@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="sign.css">
+    <style>
+        /* Fix the navbar to the top */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #333;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background: #555;
+        }
+        /* Prevent content from being hidden behind navbar */
+        .container {
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">Categories</a>
+        <a href="blog.html">Blog</a>
+        <a href="#">Styles</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="login-box">
+            <div class="icon">
+                <img src="images/pricing.jpg" alt="Sign-in Icon">
+            </div>
+            <h2>Sign in with email</h2>
+            <p>Make a new doc to bring your words, data, and teams together. For free</p>
+            <form> 
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    <a class="a" href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn">Get Started</button>
+            </form>
+            <div class="alternative-signin">
+                <p>Or sign in with</p>
+                <div class="social-icons">
+                    <a href="#"><img src="images/googleprice.jpg" alt="Google"></a>
+                    <a href="#"><img src="images/blue facebook.jpg" alt="Facebook"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
